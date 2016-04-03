@@ -88,6 +88,12 @@ module IGC
     def glider_fin_id
       headers[GLIDER_FIN_ID]
     end
+
+    # Public : Returns the duration of the flight in seconds
+    def flight_duration_in_seconds
+      (DateTime.iso8601(flight_path.keys.last) - DateTime.iso8601(flight_path.keys.first)) * 24 * 60 * 60
+    end
+
     private
 
     # Three-letter key codes adjusted to match the FAI IGC format reference

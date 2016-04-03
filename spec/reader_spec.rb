@@ -27,4 +27,8 @@ describe IGC::Reader do
   it 'should have a flight path' do
     @igc.flight_path.should be_a_kind_of Hash
   end
+
+  it 'should determine the duration of a flight' do
+    @igc.flight_duration_in_seconds.should eq(200)
+  end
 end
